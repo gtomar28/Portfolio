@@ -1,0 +1,31 @@
+.style11{
+    -webkit-text-stroke: 1px #dee2e6;
+}
+
+.btn-outline-primaryy{
+    border: 1px solid #ffa7e9;
+    color: #ffa7e9 !important;
+}
+
+.btn-outline-primaryy:hover{
+    border: 1px solid #ffa7e9;
+    color: #001f2c !important;
+    background-color: #ffa7e9;
+    font-weight: 600;
+}
+
+.formcontrolmain, .form-control {
+    color: #ffffffb6 !important;
+    box-shadow: none !important;
+    background-color: #ffdcf614 !important;
+    border: none;
+}
+
+.formcontrolmain::placeholder {
+    color: #ffffffb6 !important;
+}
+
+.socialbtns{
+    border-radius: 50%;
+    background-color: #ffa7e9;
+}

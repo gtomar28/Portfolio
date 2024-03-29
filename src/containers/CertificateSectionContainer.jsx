@@ -1,0 +1,3 @@
+import CertificateSectionComponent from '../components/CertificateSection/CertificateSectionComponent'
+
+export default CertificateSectionComponent

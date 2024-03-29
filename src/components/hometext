@@ -1,0 +1,196 @@
+import React, { useEffect, useRef, useState } from 'react';
+import Typed from 'typed.js';
+import './HomeSectionComponent.css'
+import { Link } from 'react-router-dom'
+import ProjectSectionContainer from '../../containers/ProjectSectionContainer'
+
+const HomeSectionComponent = () => {
+
+  const home= useRef();
+  const projects= useRef();
+  const about= useRef();
+  const resume= useRef();
+  const skills= useRef();
+  const certificate= useRef();
+  const contact= useRef();
+
+  const toTop = useRef();
+  const [show, setShow] = useState(false);
+
+  const typedTextRef = useRef();
+
+  useEffect(() => {
+    if (typedTextRef.current) {
+      const typed_strings = typedTextRef.current.dataset.strings;
+      const typed = new Typed(typedTextRef.current, {
+        strings: typed_strings.split(', '),
+        typeSpeed: 130,
+        backSpeed: 20,
+        smartBackspace: false,
+        loop: true,
+        showCursor: false,
+      });
+
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, []); 
+
+  const scrollHandler= (elemRef) =>{
+    window.scrollTo({top: elemRef.current.offsetTop, behavior: "smooth"});
+  };
+
+  const scrollToTop= (elemRef) =>{
+    window.scrollTo({top: 0, behavior: "smooth"});
+  };
+  
+  useEffect(() => {
+    const handleScroll =(event) =>{
+      
+      console.log('handleScroll is called!');
+      console.warn('window.scrollY', window.scrollY);
+      
+      if(window.scrollY> 500){
+        setShow(true);
+      }
+      else{
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return() => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+  }, []);
+
+
+  return (
+    <>
+      <div className="container-fluid portfoliomaincont overflow-scroll">
+
+
+        <div className="row row1st pt-4 pb-4">
+
+          <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid">
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(home)}>
+                    <Link className="nav-link active allnavbarlinks" aria-current="page" href="#">Home</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(projects)}>
+                    <Link className="nav-link allnavbarlinks" href="#">Projects</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(about)}>
+                    <Link className="nav-link allnavbarlinks" href="#">About</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(resume)}>
+                    <Link className="nav-link allnavbarlinks" href="#">Resume</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(skills)}>
+                    <Link className="nav-link allnavbarlinks" href="#">Skills</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(certificate)}>
+                    <Link className="nav-link allnavbarlinks" href="#">Cetificate</Link>
+                  </li>
+                  <li className="nav-item ps-3 pe-3" onClick= {() => scrollHandler(contact)}>
+                    <Link className="nav-link allnavbarlinks" href="#">Contact</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+
+
+        <div className="row row2nd align-items-center pb-5" ref={home}>
+          <div className="mx-auto text-center text-white m-5 p-5">
+            <div className="row p-5 m-5">
+              <h3 className="text-white font-weight-normal mb-3">I'm</h3>
+                <h1 className="display-3 text-uppercase text-pink mb-2">Garima Tomar</h1>
+                <div className="typed-text-container">
+                  <h1 ref={typedTextRef} className="typed-text-output d-inline font-weight-lighter text-white" data-strings=" Web Developer, Front-End Developer, Software Engineer"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className="row row3rd" ref={projects}><ProjectSectionContainer/></div>
+        <div className="row row4th text-white pt-5" ref={about}>
+          <h1>gybhjnkm</h1>
+        </div>
+
+
+        <div className="toparrow text-white" onClick={() => scrollToTop(toTop)}>
+        {show && <h2>dtfgyuhj</h2> }
+        </div>
+
+      </div>
+    </>
+  )
+}
+
+export default HomeSectionComponent
+
+
+
+
+
+
+// <div className="row row4th"></div>
+
+
+
+// <div className="row row5th"></div>
+
+
+
+// <div className="row row6th"></div>
+
+
+
+// <div className="row row7th"></div>
+
+
+
+// <div className="row row8th"></div>
+
+
+
+// <div className="row row9th"></div>
+
+
+
+// <div className="row row10th"></div>
+
+
+
+// <div className="row row11th"></div>
+
+
+
+// <div className="row row12th"></div>
+
+
+
+// <div className="row row13th"></div>
+
+
+
+// <div className="row row14th"></div>
+
+
+
+// <div className="row row15th"></div>
+
+

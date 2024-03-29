@@ -1,0 +1,55 @@
+.imgprofileabout{
+    width: 55% !important;
+    border-radius: 50%;
+}
+
+.btnmail{
+    border-radius: 20px;
+}
+
+.btnmail:hover, .btnmail:focus{
+    background-color: #ffa7e9 !important;
+    color: #001f2c !important;
+    border-radius: 20px;
+}
+
+
+.about-heading {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block; 
+}
+
+.animated {
+    animation: revealText 2s ease-in-out; 
+}
+
+@keyframes revealText {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  
+
+.gsap-reveal {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.heading-h2 {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 900;
+}
+
+.heading-h2.divider:before {
+    position: absolute;
+    content: "";
+}

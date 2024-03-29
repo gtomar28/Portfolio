@@ -1,0 +1,16 @@
+.resume_bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.borderllight{
+    border-left: 1px solid #fff !important;
+}
+
+.faloctioniconn{
+    margin-left: -24px;
+}
+
+.content{
+    margin-top: -24px;
+}
